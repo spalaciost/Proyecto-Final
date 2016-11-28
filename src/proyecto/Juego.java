@@ -1223,8 +1223,7 @@ public class Juego {
                panelJuego2.add(matriz[i][j],0);
             } 
         }
-    }
-    
+    }   
     public void pintarMatriz4(){
         for (int i = 0; i < mat.length; i++) {
             for (int j = 0; j < mat.length; j++) {
@@ -1235,6 +1234,7 @@ public class Juego {
             } 
         }
     }
+    
     public void comodines(){
 
         Random rn1 = new Random();
