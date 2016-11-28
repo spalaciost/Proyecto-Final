@@ -1,9 +1,6 @@
 package proyecto;
 
 import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -16,7 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
 
 public class Juego {
 
@@ -43,6 +39,7 @@ public class Juego {
     //Jugar
     JPanel panelJugar;
     JButton modoMultijugador[];
+    int modo;
     
     //Modo dos jugadores
     JPanel panelDosJugadores;
@@ -310,6 +307,7 @@ public class Juego {
 
             public void mousePressed(MouseEvent e){
                 System.out.println("Modo Dos Jugadores");
+                modo=2;
                 modoDosJugadores();
                 eventoDosJugadores();
             }
@@ -319,6 +317,7 @@ public class Juego {
 
             public void mousePressed(MouseEvent e){
                 System.out.println("Modo Cuatro Jugadores");
+                modo=4;
                 modoCuatroJugadores();
                 eventoCuatroJugadores();   
             }
@@ -1263,13 +1262,32 @@ public class Juego {
             } 
         }
     }
+    
+    public void pintarMatriz4(){
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat.length; j++) {
+               matriz[i][j].setIcon(new ImageIcon(mat[i][j]+".png"));
+               matriz[i][j].setBounds(35+(i*80),35+(j*80), 80, 80);
+               matriz[i][j].setVisible(true);
+               panelJuego4.add(matriz[i][j],0);
+            } 
+        }
+    }
     public void comodines(){
 
         Random rn1 = new Random();
         Random rn2 = new Random();
         rnx= (int)(rn1.nextDouble() * casillas-1);
         rny= (int)(rn2.nextDouble() * casillas-1);
+        
+        Random rn= new Random();
+        int rnc= (int)(rn.nextDouble() * 2);
+        if(rnc==0){
             mat[rnx][rny]=9;
+        }
+        if(rnc==1){
+            mat[rnx][rny]=10;
+        }
     }
 
     public void moverp1(){
@@ -1296,7 +1314,12 @@ public class Juego {
                         mat[dx1][dy1]=p1;
                         }
                         colisionComodines1();
+                        if(modo==2){
                         pintarMatriz();
+                        }
+                        if(modo==4){
+                        pintarMatriz4();
+                        }
                         if(cont1*porcentaje>100){
                         porcentajep1.setText("Porcentaje jugador1: 100%");
                         }else{
@@ -1313,7 +1336,12 @@ public class Juego {
                         mat[dx1][dy1]=p1;
                         }
                         colisionComodines1();
+                        if(modo==2){
                         pintarMatriz();
+                        }
+                        if(modo==4){
+                        pintarMatriz4();
+                        }
                         if(cont1*porcentaje>100){
                         porcentajep1.setText("Porcentaje jugador1: 100%");
                         }else{
@@ -1330,7 +1358,12 @@ public class Juego {
                         mat[dx1][dy1]=p1;
                         }
                         colisionComodines1();
+                        if(modo==2){
                         pintarMatriz();
+                        }
+                        if(modo==4){
+                        pintarMatriz4();
+                        }
                         if(cont1*porcentaje>100){
                         porcentajep1.setText("Porcentaje jugador1: 100%");
                         }else{
@@ -1348,7 +1381,12 @@ public class Juego {
                         mat[dx1][dy1]=p1;
                         }
                         colisionComodines1();
+                        if(modo==2){
                         pintarMatriz();
+                        }
+                        if(modo==4){
+                        pintarMatriz4();
+                        }
                         if(cont1*porcentaje>100){
                         porcentajep1.setText("Porcentaje jugador1: 100%");
                         }else{
@@ -1370,6 +1408,7 @@ public class Juego {
     }
     public void moverp2(){
         double porcentaje=100/(casillas*casillas);
+        System.out.println(porcentaje);
         ventana.addKeyListener(new KeyListener() {
 
                 @Override
@@ -1391,7 +1430,12 @@ public class Juego {
                         mat[dx2][dy2]=p2;
                         }
                         colisionComodines2();
+                        if(modo==2){
                         pintarMatriz();
+                        }
+                        if(modo==4){
+                        pintarMatriz4();
+                        }
                         porcentajep2.setText("Porcentaje jugador1: "+cont2*porcentaje+"%");
                     }
                     if(e.getKeyCode()==KeyEvent.VK_S){
@@ -1404,7 +1448,12 @@ public class Juego {
                         mat[dx2][dy2]=p2;
                         }
                         colisionComodines2();
+                        if(modo==2){
                         pintarMatriz();
+                        }
+                        if(modo==4){
+                        pintarMatriz4();
+                        }
                         porcentajep2.setText("Porcentaje jugador1: "+cont2*porcentaje+"%");
                     }
                     if(e.getKeyCode()==KeyEvent.VK_A){
@@ -1417,7 +1466,12 @@ public class Juego {
                         mat[dx2][dy2]=p2;
                         }
                         colisionComodines2();
+                        if(modo==2){
                         pintarMatriz();
+                        }
+                        if(modo==4){
+                        pintarMatriz4();
+                        }
                         porcentajep2.setText("Porcentaje jugador1: "+cont2*porcentaje+"%");
                     }
                     if(e.getKeyCode()==KeyEvent.VK_D){
@@ -1430,7 +1484,12 @@ public class Juego {
                         mat[dx2][dy2]=p2;
                         }
                         colisionComodines2();
+                        if(modo==2){
                         pintarMatriz();
+                        }
+                        if(modo==4){
+                        pintarMatriz4();
+                        }
                         porcentajep2.setText("Porcentaje jugador1: "+cont2*porcentaje+"%");
                     }
                     }catch(java.lang.ArrayIndexOutOfBoundsException a){
@@ -1468,7 +1527,7 @@ public class Juego {
                         mat[dx3][dy3]=p3;
                         }
                         colisionComodines3();
-                        pintarMatriz();
+                        pintarMatriz4();
                         porcentajep3.setText("Porcentaje jugador1: "+cont3*porcentaje+"%");
                     }
                     if(e.getKeyCode()==KeyEvent.VK_K){
@@ -1481,7 +1540,7 @@ public class Juego {
                         mat[dx3][dy3]=p3;
                         }
                         colisionComodines3();
-                        pintarMatriz();
+                        pintarMatriz4();
                         porcentajep3.setText("Porcentaje jugador1: "+cont3*porcentaje+"%");
                     }
                     if(e.getKeyCode()==KeyEvent.VK_J){
@@ -1494,7 +1553,7 @@ public class Juego {
                         mat[dx3][dy3]=p3;
                         }
                         colisionComodines3();
-                        pintarMatriz();
+                        pintarMatriz4();
                         porcentajep3.setText("Porcentaje jugador1: "+cont3*porcentaje+"%");
                     }
                     if(e.getKeyCode()==KeyEvent.VK_L){
@@ -1507,7 +1566,7 @@ public class Juego {
                         mat[dx3][dy3]=p3;
                         }
                         colisionComodines3();
-                        pintarMatriz();
+                        pintarMatriz4();
                         porcentajep3.setText("Porcentaje jugador1: "+cont3*porcentaje+"%");
                     }
                     }
@@ -1545,7 +1604,7 @@ public class Juego {
                         mat[dx4][dy4]=p4;
                         }
                         colisionComodines4();
-                        pintarMatriz();
+                        pintarMatriz4();
                         porcentajep4.setText("Porcentaje jugador1: "+cont4*porcentaje+"%");
                     }
                     if(e.getKeyCode()==KeyEvent.VK_NUMPAD2){
@@ -1558,7 +1617,7 @@ public class Juego {
                         mat[dx4][dy4]=p4;
                         }
                         colisionComodines4();
-                        pintarMatriz();
+                        pintarMatriz4();
                         porcentajep4.setText("Porcentaje jugador1: "+cont4*porcentaje+"%");
                     }
                     if(e.getKeyCode()==KeyEvent.VK_NUMPAD1){
@@ -1571,7 +1630,7 @@ public class Juego {
                         mat[dx4][dy4]=p4;
                         }
                         colisionComodines4();
-                        pintarMatriz();
+                        pintarMatriz4();
                         porcentajep4.setText("Porcentaje jugador1: "+cont4*porcentaje+"%");
                     }
                     if(e.getKeyCode()==KeyEvent.VK_NUMPAD3){
@@ -1584,7 +1643,7 @@ public class Juego {
                         mat[dx4][dy4]=p4;
                         }
                         colisionComodines4();
-                        pintarMatriz();
+                        pintarMatriz4();
                         porcentajep4.setText("Porcentaje jugador1: "+cont4*porcentaje+"%");
                     }
                     }
