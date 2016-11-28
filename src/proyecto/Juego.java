@@ -1211,9 +1211,10 @@ public class Juego {
     }
     
     //Posiciones
-    int dx1=0, dx2=(casillas-1), dx3=0, dx4=(casillas-1);
-    int dy1=0, dy2=(casillas-1), dy3=(casillas-1), dy4=0;
+    int dx1=0, dx2, dx3, dx4=0;
+    int dy1=0, dy2, dy3=0, dy4;
     
+   
     public void pintarMatriz(){
         for (int i = 0; i < mat.length; i++) {
             for (int j = 0; j < mat.length; j++) {
@@ -1404,6 +1405,26 @@ public class Juego {
             Finalizar();
     }
     public void moverp2(){
+        switch(casillas){
+    case 5:
+    dx2=4; dy2=4; dx3=4; dy4=4;
+    break;
+    case 6:
+    dx2=5; dy2=5; dx3=5; dy4=5;
+    break;
+    case 7:
+    dx2=6; dy2=6; dx3=6; dy4=6;
+    break;
+    case 8:
+    dx2=7; dy2=7; dx3=7; dy4=7;
+    break;
+    case 9:
+    dx2=8; dy2=8; dx3=8; dy4=8;
+    break;
+    case 10:
+    dx2=9; dy2=9; dx3=9; dy4=9;
+    break;    
+}
         double porcentaje=100/(casillas*casillas);
         System.out.println(porcentaje);
         ventana.addKeyListener(new KeyListener() {
@@ -1554,6 +1575,26 @@ public class Juego {
 
     }
     public void moverp3(){
+        switch(casillas){
+    case 5:
+    dx2=4; dy2=4; dx3=4; dy4=4;
+    break;
+    case 6:
+    dx2=5; dy2=5; dx3=5; dy4=5;
+    break;
+    case 7:
+    dx2=6; dy2=6; dx3=6; dy4=6;
+    break;
+    case 8:
+    dx2=7; dy2=7; dx3=7; dy4=7;
+    break;
+    case 9:
+    dx2=8; dy2=8; dx3=8; dy4=8;
+    break;
+    case 10:
+    dx2=9; dy2=9; dx3=9; dy4=9;
+    break;    
+}
             double porcentaje=100/(casillas*casillas);
             ventana.addKeyListener(new KeyListener() {
 
@@ -1683,6 +1724,26 @@ public class Juego {
             });
     }
     public void moverp4(){
+        switch(casillas){
+    case 5:
+    dx2=4; dy2=4; dx3=4; dy4=4;
+    break;
+    case 6:
+    dx2=5; dy2=5; dx3=5; dy4=5;
+    break;
+    case 7:
+    dx2=6; dy2=6; dx3=6; dy4=6;
+    break;
+    case 8:
+    dx2=7; dy2=7; dx3=7; dy4=7;
+    break;
+    case 9:
+    dx2=8; dy2=8; dx3=8; dy4=8;
+    break;
+    case 10:
+    dx2=9; dy2=9; dx3=9; dy4=9;
+    break;    
+}
             double porcentaje=100/(casillas*casillas);
             ventana.addKeyListener(new KeyListener() {
 
@@ -1813,7 +1874,7 @@ public class Juego {
     
     }
     
-    int comodines;
+    int comodines; 
     
     public void colisionComodines1(){
         Random rncomodines = new Random();
