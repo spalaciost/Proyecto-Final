@@ -1271,6 +1271,15 @@ public class Juego {
                         if(dy1>=0&&dy1<=casillas-1){
                         if(mat[dx1][dy1-1]!=c1){
                         cont1=cont1+1;}
+                            if(mat[dx1][dy1-1]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx1][dy1-1]==c3){
+                            cont3-=1;
+                            }
+                            if(mat[dx1][dy1-1]==c4){
+                            cont4-=1;
+                            }
                         mat[dx1][dy1]=c1;
                         dy1=dy1-1;
                         mat[dx1][dy1]=p1;
@@ -1293,6 +1302,15 @@ public class Juego {
                         if(dy1>=0&&dy1<=casillas-1){
                         if(mat[dx1][dy1+1]!=c1){
                         cont1=cont1+1;}
+                        if(mat[dx1][dy1+1]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx1][dy1+1]==c3){
+                            cont3-=1;
+                            }
+                            if(mat[dx1][dy1+1]==c4){
+                            cont4-=1;
+                            }
                         mat[dx1][dy1]=c1;
                         dy1=dy1+1;
                         mat[dx1][dy1]=p1;
@@ -1315,6 +1333,15 @@ public class Juego {
                         if(dx1>=0&&dx1<=casillas-1){
                         if(mat[dx1-1][dy1]!=c1){
                         cont1=cont1+1;}
+                        if(mat[dx1-1][dy1]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx1-1][dy1]==c3){
+                            cont3-=1;
+                            }
+                            if(mat[dx1-1][dy1]==c4){
+                            cont4-=1;
+                            }
                         mat[dx1][dy1]=c1;
                         dx1=dx1-1;
                         mat[dx1][dy1]=p1;
@@ -1336,8 +1363,16 @@ public class Juego {
                         System.out.println("Movimiento hacia la derecha");
                         if(dx1>=0&&dx1<=casillas-1){
                         if(mat[dx1+1][dy1]!=c1){
-                        cont1=cont1+1;
-                        }
+                        cont1=cont1+1;}
+                        if(mat[dx1+1][dy1]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx1+1][dy1]==c3){
+                            cont3-=1;
+                            }
+                            if(mat[dx1+1][dy1]==c4){
+                            cont4-=1;
+                            }
                         mat[dx1][dy1]=c1;
                         dx1=dx1+1;
                         mat[dx1][dy1]=p1;
@@ -1387,8 +1422,17 @@ public class Juego {
                         if(dy2>=0&&dy2<=casillas-1){
                         if(mat[dx2-1][dy2]!=c2){
                         cont2=cont2+1;}
+                            if(mat[dx2][dy2-1]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx2][dy2-1]==c3){
+                            cont3-=1;
+                            }
+                            if(mat[dx2][dy2-1]==c4){
+                            cont4-=1;
+                            }
                         mat[dx2][dy2]=c2;
-                        dx2=dx2-1;
+                        dy2=dy2-1;
                         mat[dx2][dy2]=p2;
                         }
                         colisionComodines2();
@@ -1398,13 +1442,26 @@ public class Juego {
                         if(modo==4){
                         pintarMatriz4();
                         }
-                        porcentajep2.setText("Porcentaje jugador1: "+cont2*porcentaje+"%");
+                        if(cont2*porcentaje>100){
+                        porcentajep2.setText("Porcentaje jugador2: 100%");
+                        }else{
+                        porcentajep2.setText("Porcentaje jugador2: "+cont2*porcentaje+"%");
+                        }
                     }
                     if(e.getKeyCode()==KeyEvent.VK_S){
                         System.out.println("Movimiento hacia abajo");
                         if(dy2>=0&&dy2<=casillas-1){
                         if(mat[dx2][dy2+1]!=c2){
                         cont2=cont2+1;}
+                            if(mat[dx2][dy2+1]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx2][dy2+1]==c3){
+                            cont3-=1;
+                            }
+                            if(mat[dx2][dy2+1]==c4){
+                            cont4-=1;
+                            }
                         mat[dx2][dy2]=c2;
                         dy2=dy2+1;
                         mat[dx2][dy2]=p2;
@@ -1416,13 +1473,26 @@ public class Juego {
                         if(modo==4){
                         pintarMatriz4();
                         }
-                        porcentajep2.setText("Porcentaje jugador1: "+cont2*porcentaje+"%");
+                        if(cont2*porcentaje>100){
+                        porcentajep2.setText("Porcentaje jugador2: 100%");
+                        }else{
+                        porcentajep2.setText("Porcentaje jugador2: "+cont2*porcentaje+"%");
+                        }
                     }
                     if(e.getKeyCode()==KeyEvent.VK_A){
                         System.out.println("Movimiento hacia la izquierda");
                         if(dx2>=0&&dx2<=casillas-1){
                         if(mat[dx2-1][dy2]!=c2){
                         cont2=cont2+1;}
+                            if(mat[dx2-1][dy2]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx2-1][dy2]==c3){
+                            cont3-=1;
+                            }
+                            if(mat[dx2-1][dy2]==c4){
+                            cont4-=1;
+                            }
                         mat[dx2][dy2]=c2;
                         dx2=dx2-1;
                         mat[dx2][dy2]=p2;
@@ -1434,13 +1504,26 @@ public class Juego {
                         if(modo==4){
                         pintarMatriz4();
                         }
-                        porcentajep2.setText("Porcentaje jugador1: "+cont2*porcentaje+"%");
+                        if(cont2*porcentaje>100){
+                        porcentajep2.setText("Porcentaje jugador2: 100%");
+                        }else{
+                        porcentajep2.setText("Porcentaje jugador2: "+cont2*porcentaje+"%");
+                        }
                     }
                     if(e.getKeyCode()==KeyEvent.VK_D){
                         System.out.println("Movimiento hacia la derecha");
                         if(dx2>=0&&dx2<=casillas-1){
                         if(mat[dx2+1][dy2]!=c2){
                         cont2=cont2+1;}
+                            if(mat[dx2+1][dy2]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx2+1][dy2]==c3){
+                            cont3-=1;
+                            }
+                            if(mat[dx2+1][dy2]==c4){
+                            cont4-=1;
+                            }
                         mat[dx2][dy2]=c2;
                         dx2=dx2+1;
                         mat[dx2][dy2]=p2;
@@ -1452,7 +1535,11 @@ public class Juego {
                         if(modo==4){
                         pintarMatriz4();
                         }
-                        porcentajep2.setText("Porcentaje jugador1: "+cont2*porcentaje+"%");
+                        if(cont2*porcentaje>100){
+                        porcentajep2.setText("Porcentaje jugador2: 100%");
+                        }else{
+                        porcentajep2.setText("Porcentaje jugador2: "+cont2*porcentaje+"%");
+                        }
                     }
                     }catch(java.lang.ArrayIndexOutOfBoundsException a){
                         System.out.println("no se puede jugar fuera de la matriz");
@@ -1484,52 +1571,104 @@ public class Juego {
                         if(dy3>=0&&dy3<=casillas-1){
                         if(mat[dx3][dy3-1]!=c3){
                         cont3=cont3+1;}
+                            if(mat[dx3][dy3-1]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx3][dy3-1]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx3][dy3-1]==c4){
+                            cont4-=1;
+                            }
                         mat[dx3][dy3]=c3;
                         dy3=dy3-1;
                         mat[dx3][dy3]=p3;
                         }
                         colisionComodines3();
                         pintarMatriz4();
-                        porcentajep3.setText("Porcentaje jugador1: "+cont3*porcentaje+"%");
+                        if(cont3*porcentaje>100){
+                        porcentajep3.setText("Porcentaje jugador3: 100%");
+                        }else{
+                        porcentajep3.setText("Porcentaje jugador3: "+cont3*porcentaje+"%");
+                        }
                     }
                     if(e.getKeyCode()==KeyEvent.VK_K){
                         System.out.println("Movimiento hacia abajo");
                         if(dy3>=0&&dy3<=casillas-1){
                         if(mat[dx3][dy3+1]!=c3){
                         cont3=cont3+1;}
+                            if(mat[dx3][dy3+1]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx3][dy3+1]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx3][dy3+1]==c4){
+                            cont4-=1;
+                            }
                         mat[dx3][dy3]=c3;
                         dy3=dy3+1;
                         mat[dx3][dy3]=p3;
                         }
                         colisionComodines3();
                         pintarMatriz4();
-                        porcentajep3.setText("Porcentaje jugador1: "+cont3*porcentaje+"%");
+                        if(cont3*porcentaje>100){
+                        porcentajep3.setText("Porcentaje jugador3: 100%");
+                        }else{
+                        porcentajep3.setText("Porcentaje jugador3: "+cont3*porcentaje+"%");
+                        }
                     }
                     if(e.getKeyCode()==KeyEvent.VK_J){
                         System.out.println("Movimiento hacia la izquierda");
                         if(dx3>=0&&dx3<=casillas-1){
                         if(mat[dx3-1][dy3]!=c3){
                         cont3=cont3+1;}
+                            if(mat[dx3-1][dy3]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx3-1][dy3]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx3-1][dy3]==c4){
+                            cont4-=1;
+                            }
                         mat[dx3][dy3]=c3;
                         dx3=dx3-1;
                         mat[dx3][dy3]=p3;
                         }
                         colisionComodines3();
                         pintarMatriz4();
-                        porcentajep3.setText("Porcentaje jugador1: "+cont3*porcentaje+"%");
+                        if(cont3*porcentaje>100){
+                        porcentajep3.setText("Porcentaje jugador3: 100%");
+                        }else{
+                        porcentajep3.setText("Porcentaje jugador3: "+cont3*porcentaje+"%");
+                        }
                     }
                     if(e.getKeyCode()==KeyEvent.VK_L){
                         System.out.println("Movimiento hacia la derecha");
                         if(dx3>=0&&dx3<=casillas-1){
                         if(mat[dx3+1][dy3]!=c3){
                         cont3=cont3+1;}
+                            if(mat[dx3+1][dy3]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx3+1][dy3]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx3+1][dy3]==c4){
+                            cont4-=1;
+                            }
                         mat[dx3][dy3]=c3;
                         dx3=dx3+1;
                         mat[dx3][dy3]=p3;
                         }
                         colisionComodines3();
                         pintarMatriz4();
-                        porcentajep3.setText("Porcentaje jugador1: "+cont3*porcentaje+"%");
+                        if(cont3*porcentaje>100){
+                        porcentajep3.setText("Porcentaje jugador3: 100%");
+                        }else{
+                        porcentajep3.setText("Porcentaje jugador3: "+cont3*porcentaje+"%");
+                        }
                     }
                     }
                     catch(java.lang.ArrayIndexOutOfBoundsException a){
@@ -1561,52 +1700,104 @@ public class Juego {
                         if(dy4>=0&&dy4<=casillas-1){
                         if(mat[dx4][dy4-1]!=c4){
                         cont4=cont4+1;}
+                            if(mat[dx4][dy4-1]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx4][dy4-1]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx4][dy4-1]==c3){
+                            cont3-=1;
+                            }
                         mat[dx4][dy4]=c4;
                         dy4=dy4-1;
                         mat[dx4][dy4]=p4;
                         }
                         colisionComodines4();
                         pintarMatriz4();
-                        porcentajep4.setText("Porcentaje jugador1: "+cont4*porcentaje+"%");
+                        if(cont4*porcentaje>100){
+                        porcentajep4.setText("Porcentaje jugador4: 100%");
+                        }else{
+                        porcentajep4.setText("Porcentaje jugador4: "+cont4*porcentaje+"%");
+                        }
                     }
                     if(e.getKeyCode()==KeyEvent.VK_NUMPAD2){
                         System.out.println("Movimiento hacia abajo");
                         if(dy4>=0&&dy4<=casillas-1){
                         if(mat[dx4][dy4+1]!=c4){
                         cont4=cont4+1;}
+                            if(mat[dx4][dy4+1]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx4][dy4+1]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx4][dy4+1]==c3){
+                            cont3-=1;
+                            }
                         mat[dx4][dy4]=c4;
                         dy4=dy4+1;
                         mat[dx4][dy4]=p4;
                         }
                         colisionComodines4();
                         pintarMatriz4();
-                        porcentajep4.setText("Porcentaje jugador1: "+cont4*porcentaje+"%");
+                        if(cont4*porcentaje>100){
+                        porcentajep4.setText("Porcentaje jugador4: 100%");
+                        }else{
+                        porcentajep4.setText("Porcentaje jugador4: "+cont4*porcentaje+"%");
+                        }
                     }
                     if(e.getKeyCode()==KeyEvent.VK_NUMPAD1){
                         System.out.println("Movimiento hacia la izquierda");
                         if(dx4>=0&&dx4<=casillas-1){
                         if(mat[dx4-1][dy4]!=c4){
                         cont4=cont4+1;}
+                            if(mat[dx4-1][dy4]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx4-1][dy4]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx4-1][dy4]==c3){
+                            cont3-=1;
+                            }
                         mat[dx4][dy4]=c4;
                         dx4=dx4-1;
                         mat[dx4][dy4]=p4;
                         }
                         colisionComodines4();
                         pintarMatriz4();
-                        porcentajep4.setText("Porcentaje jugador1: "+cont4*porcentaje+"%");
+                        if(cont4*porcentaje>100){
+                        porcentajep4.setText("Porcentaje jugador4: 100%");
+                        }else{
+                        porcentajep4.setText("Porcentaje jugador4: "+cont4*porcentaje+"%");
+                        }
                     }
                     if(e.getKeyCode()==KeyEvent.VK_NUMPAD3){
                         System.out.println("Movimiento hacia la derecha");
                         if(dx4>=0&&dx4<=casillas-1){
                         if(mat[dx4+1][dy4]!=c4){
                         cont4=cont4+1;}
+                            if(mat[dx4+1][dy4]==c1){
+                            cont1-=1;
+                            }
+                            if(mat[dx4+1][dy4]==c2){
+                            cont2-=1;
+                            }
+                            if(mat[dx4+1][dy4]==c3){
+                            cont3-=1;
+                            }
                         mat[dx4][dy4]=c4;
                         dx4=dx4+1;
                         mat[dx4][dy4]=p4;
                         }
                         colisionComodines4();
                         pintarMatriz4();
-                        porcentajep4.setText("Porcentaje jugador1: "+cont4*porcentaje+"%");
+                        if(cont4*porcentaje>100){
+                        porcentajep4.setText("Porcentaje jugador4: 100%");
+                        }else{
+                        porcentajep4.setText("Porcentaje jugador4: "+cont4*porcentaje+"%");
+                        }
                     }
                     }
                     catch(java.lang.ArrayIndexOutOfBoundsException a){
