@@ -214,8 +214,6 @@ public class Juego {
 
             public void mousePressed(MouseEvent e){
                 System.out.println("Instrucciones");
-                /*Instrucciones();
-                eventoInstrucciones();*/
                 JOptionPane.showMessageDialog(panelMenu, "EL juego hace bla bla bla bla");
                 
             }
@@ -226,42 +224,6 @@ public class Juego {
             public void mousePressed(MouseEvent e){
                 System.out.println("Salir");
                 System.exit(0);
-            }
-        });
-    }
-    
-    public void Instrucciones(){
-        panelPresentacion.setVisible(false);
-        panelMenu.setVisible(false);
-        panelInstrucciones= new JPanel();
-        panelInstrucciones.setLayout(null);
-        panelInstrucciones.setBounds(0,0, ventana.getWidth(), ventana.getHeight());
-        panelInstrucciones.setVisible(true);
-        
-        fondoMenu= new JLabel();
-        fondoMenu.setBounds(0, 0, ventana.getWidth(), ventana.getHeight());
-        imagenFondoMenu= new ImageIcon("Fondo.jpg");
-        imagenFondoMenu= new ImageIcon(imagenFondoMenu.getImage().getScaledInstance(ventana.getWidth(), ventana.getHeight(), Image.SCALE_DEFAULT));
-        fondoMenu.setIcon(imagenFondoMenu);
-        fondoMenu.setVisible(true);
-        panelInstrucciones.add(fondoMenu,0);
-        
-        regresar= new JButton("regresar");
-        regresar.setBackground(Color.WHITE);
-        regresar.setBounds(ventana.getWidth()-120, 50, 100, 30);
-        regresar.setVisible(true);
-        
-        panelInstrucciones.add(regresar,0);
-        
-        ventana.add(panelInstrucciones);
-    }
-    public void eventoInstrucciones(){
-    
-        regresar.addMouseListener(new MouseAdapter() {
-
-            public void mousePressed(MouseEvent e){
-                System.out.println("Regresar");
-                Jugar();
             }
         });
     }
