@@ -1,12 +1,18 @@
 package proyecto;
 
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -74,6 +80,7 @@ public class Juego {
     
     //Juego2
     JPanel panelJuego2;
+    
     
     //juego 4
     JPanel panelJuego4;
@@ -984,11 +991,10 @@ public class Juego {
         porcentajep2.setVisible(true);
         porcentajep2.setFont(new java.awt.Font("Tahoma", 0, 16)); 
         panelJuego2.add(porcentajep2,0);
-        
+                 
+        comodines();
         moverp1();
         moverp2();
-        comodines();
-        
     ventana.add(panelJuego2);
     }
     public int[][] tablero2(int casillas){
@@ -1141,7 +1147,6 @@ public class Juego {
         moverp3();
         moverp4();
         comodines();
-        Finalizar();
     ventana.add(panelJuego4);
     }    
     public int[][] tablero4(int casillas){
@@ -1248,6 +1253,7 @@ public class Juego {
             } 
         }
     }
+    double completado;
     
     public void comodines(){
 
@@ -1384,7 +1390,7 @@ public class Juego {
                             }
                         mat[dx1][dy1]=c1;
                         dx1=dx1-1;
-                        mat[dx1][dy1]=p1;
+                        mat[dx1][dy1]=p1+10;
                         }
                         colisionComodines1();
                         if(modo==2){
@@ -1434,6 +1440,7 @@ public class Juego {
                     catch(java.lang.ArrayIndexOutOfBoundsException a){
                         System.out.println("No se puede jugar fuera de la matriz");
                     }
+                    Finalizar();
                 }
 
                 @Override
@@ -1560,7 +1567,7 @@ public class Juego {
                             }
                         mat[dx2][dy2]=c2;
                         dx2=dx2-1;
-                        mat[dx2][dy2]=p2;
+                        mat[dx2][dy2]=p2+10;
                         }
                         colisionComodines2();
                         if(modo==2){
@@ -1609,6 +1616,7 @@ public class Juego {
                     }catch(java.lang.ArrayIndexOutOfBoundsException a){
                         System.out.println("no se puede jugar fuera de la matriz");
                     }
+                    Finalizar();
                 }
 
                 @Override
@@ -1724,7 +1732,7 @@ public class Juego {
                             }
                         mat[dx3][dy3]=c3;
                         dx3=dx3-1;
-                        mat[dx3][dy3]=p3;
+                        mat[dx3][dy3]=p3+10;
                         }
                         colisionComodines3();
                         pintarMatriz4();
@@ -1764,6 +1772,7 @@ public class Juego {
                     catch(java.lang.ArrayIndexOutOfBoundsException a){
                         System.out.println("No se puede jugar fuera de la matriz");
                     }
+                    Finalizar();
                 }
 
                 @Override
@@ -1878,7 +1887,7 @@ public class Juego {
                             }
                         mat[dx4][dy4]=c4;
                         dx4=dx4-1;
-                        mat[dx4][dy4]=p4;
+                        mat[dx4][dy4]=p4+10;
                         }
                         colisionComodines4();
                         pintarMatriz4();
@@ -1918,6 +1927,7 @@ public class Juego {
                     catch(java.lang.ArrayIndexOutOfBoundsException a){
                         System.out.println("No se puede jugar fuera de la matriz");
                     }
+                    Finalizar();
                 }
 
                 @Override
@@ -1927,7 +1937,7 @@ public class Juego {
             });
     
     }
-    
+
     int comodines; 
     
     public void colisionComodines1(){
@@ -2130,7 +2140,6 @@ public class Juego {
     //colores
     int casillas1, casillas2, casillas3, casillas4;
     public void Finalizar(){
-        double completado=(cont1+cont2+cont3+cont4)*porcentaje;
                if(completado>=98.5){
                    if(cont1>cont2&&cont1>cont3&&cont1>cont4){
                        System.out.println(casillas1);
