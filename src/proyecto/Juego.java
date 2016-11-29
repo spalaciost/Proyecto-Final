@@ -2117,44 +2117,21 @@ public class Juego {
     //colores
     int casillas1, casillas2, casillas3, casillas4;
     public void Finalizar(){
-        int contador=0;
-        int revision=(casillas*casillas);
-        for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat.length; j++) {
-               if(mat[i][j]!=0){
-                        if(mat[i][j]==c1){
-                           casillas1+=1;
-                            System.out.println("casilla1");
-                   }
-                        if(mat[i][j]==c2){
-                           casillas2+=1;
-                           System.out.println("casilla2");
-                   }
-                        if(mat[i][j]==c3){
-                           casillas3+=1;
-                           System.out.println("casilla3");
-                   }
-                        if(mat[i][j]==c4){
-                           casillas4+=1;
-                           System.out.println("casilla4");
-                   }
-
-               contador++;
-               }}}
-               if(contador==revision){
-                   if(casillas1>casillas2&&casillas1>casillas3&&casillas1>casillas4){
+        double completado=(cont1+cont2+cont3+cont4)*porcentaje;
+               if(completado>=98.5){
+                   if(cont1>cont2&&cont1>cont3&&cont1>cont4){
                        System.out.println(casillas1);
                JOptionPane.showMessageDialog(panelJuego2, "Felicitaciones, el jugador numero 1 a ganado");
                    }
-                   if(casillas2>casillas1&&casillas2>casillas3&&casillas2>casillas4){
+                   if(cont2>cont1&&cont2>cont3&&cont2>cont4){
                        System.out.println(casillas2);
                JOptionPane.showMessageDialog(panelJuego2, "Felicitaciones, el jugador numero 2 a ganado");
                    }
-                   if(casillas3>casillas1&&casillas3>casillas2&&casillas3>casillas4){
+                   if(cont3>cont2&&cont3>cont1&&cont3>cont4){
                        System.out.println(casillas3);
                JOptionPane.showMessageDialog(panelJuego2, "Felicitaciones, el jugador numero 3 a ganado");
                    }
-                   if(casillas3>casillas2&&casillas3>casillas1&&casillas3>casillas4){
+                   if(cont4>cont2&&cont4>cont3&&cont4>cont1){
                        System.out.println(casillas4);
                JOptionPane.showMessageDialog(panelJuego2, "Felicitaciones, el jugador numero 4 a ganado");
                    }
