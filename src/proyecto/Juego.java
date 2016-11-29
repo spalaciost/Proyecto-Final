@@ -1252,9 +1252,35 @@ public class Juego {
             mat[rnx][rny]=10;
         }
     }
-
+    double porcentaje;
     public void moverp1(){
-        double porcentaje=(100*1)/(casillas*casillas);
+        switch(casillas){
+    case 5:
+    dx2=4; dy2=4; dx3=4; dy4=4;
+    porcentaje=4;
+    break;
+    case 6:
+    dx2=5; dy2=5; dx3=5; dy4=5;
+    porcentaje=2.77;
+    break;
+    case 7:
+    dx2=6; dy2=6; dx3=6; dy4=6;
+    porcentaje=2.04;
+    break;
+    case 8:
+    dx2=7; dy2=7; dx3=7; dy4=7;
+    porcentaje=1.56;
+    break;
+    case 9:
+    dx2=8; dy2=8; dx3=8; dy4=8;
+    porcentaje=1.23;
+    break;
+    case 10:
+    dx2=9; dy2=9; dx3=9; dy4=9;
+    porcentaje=1;
+    break;    
+}
+        
         System.out.println(porcentaje);
             ventana.addKeyListener(new KeyListener() {
                 
@@ -1408,24 +1434,29 @@ public class Juego {
         switch(casillas){
     case 5:
     dx2=4; dy2=4; dx3=4; dy4=4;
+    porcentaje=4;
     break;
     case 6:
     dx2=5; dy2=5; dx3=5; dy4=5;
+    porcentaje=2.77;
     break;
     case 7:
     dx2=6; dy2=6; dx3=6; dy4=6;
+    porcentaje=2.04;
     break;
     case 8:
     dx2=7; dy2=7; dx3=7; dy4=7;
+    porcentaje=1.56;
     break;
     case 9:
     dx2=8; dy2=8; dx3=8; dy4=8;
+    porcentaje=1.23;
     break;
     case 10:
     dx2=9; dy2=9; dx3=9; dy4=9;
+    porcentaje=1;
     break;    
 }
-        double porcentaje=100/(casillas*casillas);
         System.out.println(porcentaje);
         ventana.addKeyListener(new KeyListener() {
 
@@ -1441,7 +1472,7 @@ public class Juego {
                     if(e.getKeyCode()==KeyEvent.VK_W){
                         System.out.println("Movimiento hacia arriba");
                         if(dy2>=0&&dy2<=casillas-1){
-                        if(mat[dx2-1][dy2]!=c2){
+                        if(mat[dx2][dy2-1]!=c2){
                         cont2=cont2+1;}
                             if(mat[dx2][dy2-1]==c1){
                             cont1-=1;
@@ -1578,24 +1609,29 @@ public class Juego {
         switch(casillas){
     case 5:
     dx2=4; dy2=4; dx3=4; dy4=4;
+    porcentaje=4;
     break;
     case 6:
     dx2=5; dy2=5; dx3=5; dy4=5;
+    porcentaje=2.77;
     break;
     case 7:
     dx2=6; dy2=6; dx3=6; dy4=6;
+    porcentaje=2.04;
     break;
     case 8:
     dx2=7; dy2=7; dx3=7; dy4=7;
+    porcentaje=1.56;
     break;
     case 9:
     dx2=8; dy2=8; dx3=8; dy4=8;
+    porcentaje=1.23;
     break;
     case 10:
     dx2=9; dy2=9; dx3=9; dy4=9;
+    porcentaje=1;
     break;    
 }
-            double porcentaje=100/(casillas*casillas);
             ventana.addKeyListener(new KeyListener() {
 
                 @Override
@@ -1727,24 +1763,29 @@ public class Juego {
         switch(casillas){
     case 5:
     dx2=4; dy2=4; dx3=4; dy4=4;
+    porcentaje=4;
     break;
     case 6:
     dx2=5; dy2=5; dx3=5; dy4=5;
+    porcentaje=2.77;
     break;
     case 7:
     dx2=6; dy2=6; dx3=6; dy4=6;
+    porcentaje=2.04;
     break;
     case 8:
     dx2=7; dy2=7; dx3=7; dy4=7;
+    porcentaje=1.56;
     break;
     case 9:
     dx2=8; dy2=8; dx3=8; dy4=8;
+    porcentaje=1.23;
     break;
     case 10:
     dx2=9; dy2=9; dx3=9; dy4=9;
+    porcentaje=1;
     break;    
 }
-            double porcentaje=100/(casillas*casillas);
             ventana.addKeyListener(new KeyListener() {
 
                 @Override
