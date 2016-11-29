@@ -87,7 +87,7 @@ public class Juego {
     int rnx, rny;
     
     public Juego(){
-        ventana= new JFrame("JUEGO");
+        ventana= new JFrame("CHASE-SQUARE");
         ventana.setSize(850+9, 860+25);
         ventana.setLayout(null);
         ventana.setLocationRelativeTo(null);
@@ -102,7 +102,7 @@ public class Juego {
         
         iniciar= new JButton("Iniciar");
         iniciar.setBackground(Color.WHITE);
-        iniciar.setBounds(ventana.getWidth()-300, 60, 200, 50);
+        iniciar.setBounds(ventana.getWidth()-300, 100, 200, 50);
         iniciar.setVisible(true);
         panelPresentacion.add(iniciar,0);
         
@@ -113,6 +113,13 @@ public class Juego {
         fondoPresentacion.setIcon(imagenFondoPres);
         fondoPresentacion.setVisible(true);
         panelPresentacion.add(fondoPresentacion,0);
+        
+        personajes= new JLabel("CHASE-SQUARE");
+        personajes.setBounds(50, 100, 700, 40);
+        personajes.setForeground(Color.white);
+        personajes.setVisible(true);
+        personajes.setFont(new java.awt.Font("Tahoma", 0, 40)); 
+        panelPresentacion.add(personajes,0);
         
         //menu
         botones= new JButton[3];
@@ -214,9 +221,12 @@ public class Juego {
 
             public void mousePressed(MouseEvent e){
                 System.out.println("Instrucciones");
-                JOptionPane.showMessageDialog(panelMenu, "EL juego consiste en pintar la mayor cantidad de casillas \n "
-                        + "1.deberas escoger el tipo de juego multijugador \n   1.1 Juego para cuatro jugadores \n   1.2 juego para cuatro jugadores"
-                        + "\n 2. Escoge el personaje que mas te agrade \n 3. Escoger tu color favorito \n 4. Las teclas e juego son: \n   4.1 Jugador 1 con flechas \n   4.2 Jugador 2 con las teclas 'W,S,D,A' "
+                JOptionPane.showMessageDialog(panelMenu, "El juego consiste en crear una plataforma cuadriculada en donde participen uno a cuatro jugadores\n"
+                        + " donde tendrán que recorrer la mayor cantidad de cuadrados y se pintara de un color específico \n "
+                        + "el jugador que cuente con más recuadros pintados sera el ganador. \n "
+                        + "1.deberas ecoger el tipo de juego multijugador \n   1.1 Juego para cuatro jugadores \n   1.2 juego para cuatro jugadores"
+                        + "\n 2. Escoge el personaje que mas te agrade \n 3. Escoger tu color favorito \n 4. Las teclas e juego son: \n   "
+                        + "4.1 Jugador 1 con flechas \n   4.2 Jugador 2 con las teclas 'W,S,D,A' "
                         + "\n   4.3 Jugador 3 con las teclas´J,K,L,I´ \n   4.4 Jugador 4 con el teclado numerico" );
                 
             }
@@ -2119,8 +2129,7 @@ public class Juego {
     
     //colores
     int casillas1, casillas2, casillas3, casillas4;
-    public void Finalizar()
-    {
+    public void Finalizar(){
         double completado=(cont1+cont2+cont3+cont4)*porcentaje;
                if(completado>=98.5){
                    if(cont1>cont2&&cont1>cont3&&cont1>cont4){
