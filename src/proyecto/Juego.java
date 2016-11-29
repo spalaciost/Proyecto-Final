@@ -214,7 +214,10 @@ public class Juego {
 
             public void mousePressed(MouseEvent e){
                 System.out.println("Instrucciones");
-                JOptionPane.showMessageDialog(panelMenu, "EL juego hace bla bla bla bla");
+                JOptionPane.showMessageDialog(panelMenu, "EL juego consiste en pintar la mayor cantidad de casillas \n "
+                        + "1.deberas escoger el tipo de juego multijugador \n   1.1 Juego para cuatro jugadores \n   1.2 juego para cuatro jugadores"
+                        + "\n 2. Escoge el personaje que mas te agrade \n 3. Escoger tu color favorito \n 4. Las teclas e juego son: \n   4.1 Jugador 1 con flechas \n   4.2 Jugador 2 con las teclas 'W,S,D,A' "
+                        + "\n   4.3 Jugador 3 con las teclas´J,K,L,I´ \n   4.4 Jugador 4 con el teclado numerico" );
                 
             }
         });
@@ -2116,7 +2119,8 @@ public class Juego {
     
     //colores
     int casillas1, casillas2, casillas3, casillas4;
-    public void Finalizar(){
+    public void Finalizar()
+    {
         double completado=(cont1+cont2+cont3+cont4)*porcentaje;
                if(completado>=98.5){
                    if(cont1>cont2&&cont1>cont3&&cont1>cont4){
